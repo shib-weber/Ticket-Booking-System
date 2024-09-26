@@ -1,0 +1,70 @@
+.date-selection {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.date-box {
+    background-color: #f00040;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    width: 110px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.date-box.selected {
+    background-color: white; /* Selected background color */
+    color: black; /* Selected font color */
+    font-weight: bold;
+    border: 1px solid black; /* Optional, for a clear selection */
+}
+.date-box span{
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0px 2px;
+}
+
+.date-box.selected {
+    background-color: #001f3f; /* Navy blue for the selected state */
+    color: white; /* White text for selected date */
+    border-color: #001f3f;
+}
+
+.date-box:hover {
+    background-color: #f0f0f0;
+    border-color: #c72020;
+    font-weight: 600;
+    color:rgb(242, 9, 48);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.custom-button {
+    background-color: #f5f5f5;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-button:hover {
+    background-color: #f0f0f0;
+    border-color: #bbb;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.selected-date{
+    /* border: 1px solid black; */
+    font-size: 20px;
+    font-weight: 700;
+    width: 280px;
+}

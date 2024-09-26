@@ -1,0 +1,746 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    overflow-y: auto;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+h1 {
+    display: flex;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    background-color: #007bff;
+    color: white;
+    font-size: 28px;
+    text-align: center;
+}
+
+#logout {
+    background-color: #f0e0e1;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#logout:hover {
+    background-color: #cfc0c0;
+}
+
+.register {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    height:500px;
+    overflow-y: auto;
+}
+
+#userTable {
+    margin-top: 10px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#ticketChart, #ticketChart2 {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 768px) {
+    .chart-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    #ticketChart, #ticketChart2 {
+        max-width: 100%;
+    }
+}
+.booking{
+    height: 150px;
+    left: 50%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.generate{
+    padding: 2% 10%;
+    height: auto;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-items: right;
+}
+
+.generate-header{
+    display: flex;
+    justify-content: center;
+}
+
+.generate-input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50%;
+}
+
+.generate-input input{
+    height: 15%;
+    font-size: 16px;
+}
+
+.generate-input label{
+    font-size: 17px;
+}
+
+#Generate{
+    margin: 0 auto;
+    border-radius: 2%;
+}
+
+img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    left: 2;
+}
+.image {
+    position: absolute;
+    left: 20px;
+    cursor: pointer;
+    transition: all 0.25s;
+
+}
+
+.image img {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.image:hover {
+    transform: scale(1.1);
+}
+
+/* Side panel */
+.side-panel {
+    width: 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.side-panel.open {
+    width: 250px;
+}
+
+.side-panel .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.side-panel h2 {
+    color: white;
+    margin-left: 20px;
+}
+
+.side-panel ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-panel ul li {
+    padding: 10px 20px;
+}
+
+.side-panel ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.side-panel ul li a:hover {
+    background-color: #575757;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff;
+    padding: 20px;
+    position: relative;
+}
+
+/* Search Bar Container */
+.search-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+/* Search Bar Input */
+#searchi {
+    width: 100%;
+    max-width: 400px; /* Max width for responsive design */
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover and Focus Effects */
+#searchi:focus {
+    border-color: #2c2380; /* Green border on focus */
+    box-shadow: 0 0 10px rgba(76, 144, 175, 0.4); /* Green shadow */
+}
+
+/* Optional - Placeholder Style */
+#searchi::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Search Button */
+#search-btn {
+    margin-left: -45px; /* Adjust position next to search bar */
+    background-color: #3767af;
+    border: none;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Responsive for Mobile */
+@media (max-width: 600px) {
+    .search-container {
+        flex-direction: column;
+    }
+
+    #searchi {
+        width: 90%; /* Adjust width for small screens */
+        margin-bottom: 10px;
+    }
+
+    #search-btn {
+        margin-left: 0;
+    }
+}
+.totticket {
+    background: linear-gradient(135deg, purple, violet); /* Gradient background */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px auto;
+    width: 80%; /* Adjust width to fit better */
+    max-width: 600px; /* Maximum width */
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+
+.totticket h2{
+    color: white;
+}
+.totticket:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+.totticket h2 {
+    margin: 0;
+    padding: 10px 0;
+}
+.date-filter-container {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    position: relative; /* To position dropdown options */
+}
+
+#filterIcon {
+    background-color: #007bff; /* Button background */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 0.5rem 1rem; /* Padding */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+#filterIcon:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#dateOptions {
+    width: 150px;
+    display: none; /* Initially hidden */
+    position: absolute; /* Position relative to the container */
+    top: 100%; /* Below the button */
+    left: 0; /* Align with left edge */
+    background-color: white; /* Dropdown background */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.date-option,
+#removeFilter {
+    display: block; /* Make buttons block-level */
+    width: 100%; /* Full width */
+    padding: 0.5rem 1rem; /* Padding */
+    border: none; /* Remove border */
+    background: transparent; /* Transparent background */
+    color: #007bff; /* Text color */
+    cursor: pointer; /* Pointer cursor */
+    text-align: left; /* Left align text */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.date-option:hover,
+#removeFilter:hover {
+    background-color: #f1f1f1; /* Light gray on hover */
+}
+
+#removeFilter {
+    color: #dc3545; /* Red text for the remove filter option */
+}
+
+#removeFilter:hover {
+    background-color: #f8d7da; /* Light red on hover */
+}
+
+.searchnfilter{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.booking {
+    height: 400px;
+    background-color: #f0f4f8; /* Light background for the section */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center; /* Centering the content */
+    font-family: 'Arial', sans-serif;
+}
+
+.booking h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.booking input[type="number"] {
+    padding: 10px;
+    width: 60%;
+    max-width: 300px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: border 0.3s;
+}
+
+.booking input[type="number"]:focus {
+    border-color: #6a5fff; /* Highlight on focus */
+    outline: none;
+}
+
+.booking input[type="text"] {
+    padding: 10px;
+    width: 60%;
+    max-width: 300px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: border 0.3s;
+}
+
+.booking input[type="text"]:focus {
+    border-color: #6a5fff; /* Highlight on focus */
+    outline: none;
+}
+
+#dates{
+    padding: 2%;
+}
+.booking button {
+    background-color: #bf5fff; /* Button background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.booking button:hover {
+    background-color: #c37bfe; /* Change color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.booking p {
+    font-size: 18px;
+    color: #555;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.generate {
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+    background-color: #fafafa;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    max-width: 700px;
+    margin: 30px auto;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.generate-header {
+    font-size: 28px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.generate-input {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.generate-input label {
+    font-size: 16px;
+    color: #555;
+    text-align: left; /* Align labels to the left */
+    font-weight: bold;
+}
+
+.generate-input input {
+    padding: 10px;
+    width: 100%;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+.generate-input input:focus {
+    border-color: #6a5fff; /* Change border color on focus */
+    outline: none;
+}
+
+#Generate {
+    background-color: #825fff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#Generate:hover {
+    background-color: #b87bfe;
+    transform: scale(1.05);
+}
+
+.coupon-display {
+    margin-top: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.coupon-display p {
+    font-size: 18px;
+    color: #444;
+    margin: 10px 0;
+}
+
+.coupon-display p:nth-child(even) {
+    background-color: #f0f4f8; /* Alternate background color */
+    padding: 10px;
+    border-radius: 8px;
+}
+.date-filter-container {
+    position: relative;
+    display: inline-block;
+}
+
+#dateDropdown {
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    width: 100%;
+}
+
+#dateDropdown button {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+}
+
+#dateDropdown button:hover {
+    background-color: #f0f0f0;
+}
+.booking-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #e3f2fd; 
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide the default checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider background */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+/* The slider (circle) */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+/* When the checkbox is checked, move the slider */
+input:checked + .slider {
+    background-color: #612db4;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.admin-panel {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#uploadForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#uploadForm input[type="file"] {
+    padding: 10px;
+    width: 60%;
+    max-width: 300px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: border 0.3s;
+}
+
+button {
+    padding: 10px;
+    background-color: #7428a7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #232188;
+}
+
+.image-list {
+    display: flex;
+    flex-direction: column;
+}
+
+#uploadedImages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+img {
+    border-radius: 4px;
+    max-width: 100%;
+    height: auto;
+}
+
+.slider-item {
+    position: relative;
+    display: inline-block;
+}
+
+.slider-item button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slider-item button:hover {
+    background-color: #4123c8;
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP-TAAZA DANDIYA</title>
+    <link rel="stylesheet" href="/homest2.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+    
+    <div class="header">
+        <div class="image" onclick="toggleSidePanel()">
+            <img  src="/user.png" alt="User Image">
+        </div>
+        <h1>WELCOME TO TAAZATV/TAAZA DANDIYA</h1>
+    </div>
+    <button id="logout">Logout</button>
+
+    <!-- Side panel -->
+    <div id="sidePanel" class="side-panel">
+        <button class="close-btn" onclick="toggleSidePanel()">×</button>
+        <h2>User Options</h2>
+        <ul>
+            <li><a href="change-password">Change Password</a></li>
+            <li><a href="signup">Sign Up</a></li>
+        </ul>
+    </div>
+
+    <div class="totticket">
+
+    </div>
+
+    <div class="searchnfilter">
+        <div class="search-container">
+            <input type="text" id="searchi" placeholder="Search users...">
+            <button id="search-btn">
+                <i class="fas fa-search"></i> <!-- Optional FontAwesome icon -->
+            </button>
+        </div>
+        <div class="date-filter-container">
+            <button id="filterIcon" title="Select Date">
+                <i class="fas fa-calendar-alt"></i> <!-- Example icon -->
+            </button>
+            <div id="dateOptions" style="display: none;">
+                <button class="date-option" data-date="2024-10-10">10 October</button>
+                <button class="date-option" data-date="2024-10-11">11 October</button>
+                <button class="date-option" data-date="2024-10-12">12 October</button>
+                <button id="removeFilter">Remove Filter</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="register">
+        <h2> ADMIN PANEL - REGISTERED USERS DETAIL </h2>
+        <div id="userTable">
+            <!-- User details will be dynamically populated here -->
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button id="downloadExcel"><i class="fas fa-file-excel"></i> Download Excel</button>
+        <button id="downloadPDF"><i class="fas fa-file-pdf"></i> Download PDF</button>
+    </div>
+    <div class="booking-controls">
+        <h3>Event Booking Controls</h3>
+    
+        <div>
+            <h4>10 October</h4>
+            <label class="switch">
+                <input type="checkbox" id="toggleBooking_10Oct">
+                <span class="slider"></span>
+            </label>
+        </div>
+    
+        <div>
+            <h4>11 October</h4>
+            <label class="switch">
+                <input type="checkbox" id="toggleBooking_11Oct">
+                <span class="slider"></span>
+            </label>
+        </div>
+    
+        <div>
+            <h4>12 October</h4>
+            <label class="switch">
+                <input type="checkbox" id="toggleBooking_12Oct">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+    
+
+
+    <div class="chart-container">
+        <div>
+            <h1> REGISTRATION ANALYSIS</h1>
+            <canvas id="ticketChart" width="300" height="300"></canvas>
+        </div>
+        <div>
+            <h1> BOOKED TICKETS PER DAYS </h1>
+            <canvas id="ticketChart2" width="300" height="300"></canvas>
+        </div>
+    </div>
+
+    <div class="booking">
+        <div>
+            <h3>Set Max Bookings</h3>
+            <input type="number" id="maxBookingsInput" placeholder="Enter max bookings" required />
+            <input type="text" id="maxBookingsdate" placeholder="Select a date" readonly required />
+            
+            <div id="dates">
+                <button class="date-1" data-date="2024-10-10">10 October</button>
+                <button class="date-2" data-date="2024-10-11">11 October</button>
+                <button class="date-3" data-date="2024-10-12">12 October</button>
+            </div>
+            
+            <button id="setMaxBookingsButton">Set Max Bookings</button>
+            
+            <div id="limitDisplay"></div>
+            
+            <% if (limits && limits.length > 0) { %>
+                <% limits.forEach(limit => { %>
+                    <p> Limit for <%= limit.date %> is: <%= limit.limit %></p>
+                <% }); %>
+            <% } else { %>
+                <p>No booking limits set</p>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="generate">
+        <h1 class="generate-header">Coupon Generator</h1>
+
+        <div class="generate-input">
+            <label for="couponCode">Coupon Code (6 digits):</label>
+            <input type="text" id="couponCode" maxlength="6" placeholder="Enter 6 digit code" required>
+        
+            <label for="uses">Number of Ticket:</label>
+            <input type="number" id="uses" placeholder="Enter number of uses" required>
+
+            <label for="day">Event Date:</label>
+            <input type="text" id="date" placeholder="Select date" readonly required>
+            <div id="dateDropdown" style="display: none;">
+                <button class="date-option" data-date="2024-10-10">10 October</button>
+                <button class="date-option" data-date="2024-10-11">11 October</button>
+                <button class="date-option" data-date="2024-10-12">12 October</button>
+            </div>
+    
+            <label for="discount">Discount (In % ):</label>
+            <input type="number" id="discount" placeholder="Enter discount" required>
+        </div>
+        
+    
+        <button id="Generate">Generate</button>
+    
+        <div id="couponDisplay" class="coupon-display">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>No. Of Tickets</th>
+                        <th>Discount</th>
+                        <th>Coupon Code</th>
+                        <th>Start / Stop</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (coupons && coupons.length > 0) { %>
+                        <% coupons.forEach(coupon => { %>
+                            <tr>
+                                <td><%= coupon.date %></td>
+                                <td><%= coupon.uses %></td>
+                                <td><%= coupon.discount %></td>
+                                <td><%= coupon.code %></td>
+                                <td>
+                                    <label class="switch">
+                                        <input class="toggle-coupon" type="checkbox" id="togglecenabled" data-id="<%= coupon._id %>" <%= coupon.isenabled ? 'checked' : '' %>>
+                                        
+                                            <span class="slider"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    <% } else { %>
+                        <tr>
+                            <td colspan="4">No coupons available</td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    <div class="button-container">
+        <button id="downloadExcelCoupon"><i class="fas fa-file-excel"></i> Download Excel</button>
+        <button id="downloadPDFCoupon"><i class="fas fa-file-pdf"></i> Download PDF</button>
+    </div>
+
+    <div class="admin-panel">
+        <form id="uploadForm">
+            <input type="file" name="image" id="imageInput" />
+            <button type="submit">Upload</button>
+        </form>
+    
+        <div class="image-list">
+            <h3>Uploaded Images</h3>
+            <div id="uploadedImages">
+                <!-- Images will be dynamically populated here -->
+            </div>
+        </div>
+    </div>
+    
+    
+
+
+<script src="/homejs.js"></script>
+
+</body>
+</html>

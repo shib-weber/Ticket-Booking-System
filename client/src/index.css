@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+  font-family: "Poppins";
+}
+
+.inter *{
+  font-family: "Inter";
+}
+
+.debug{
+  @apply border-4 border-red-600;
+}
+
+.booking-form input, label, select{
+  font-family: 'Inter';
+  @apply outline-none;
+}
+
+.booking-form label{
+  @apply text-lg font-semibold text-slate-800;
+}
+
+.booking-form input{
+  @apply block border-2 border-slate-500 p-3 outline-none w-full;
+}
+
+.booking-form button{
+  font-family: 'Poppins';
+  @apply w-full p-3 text-center bg-pink-700 border-2 border-dashed mt-3 border-blue-500 text-white font-semibold text-lg hover:bg-pink-400;
+}
+.disabled{
+  background-color: rgb(171, 171, 171) !important;
+  color: rgba(0, 0, 0, 0.534) !important;
+
+}

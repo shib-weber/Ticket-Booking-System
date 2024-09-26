@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 10px 0;
+}
+
+h1 {
+    color: #e63946;
+}
+
+.event-details, .highlights, .venue-location {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #e63946;
+    border-radius: 5px;
+}
+
+h2, h3, h4 {
+    color: #1d3557;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+}
+
+.map-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #457b9d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.map-link:hover {
+    background-color: #1d3557;
+}

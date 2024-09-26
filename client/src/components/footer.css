@@ -1,0 +1,10 @@
+.footer{
+    background-color: rgb(202, 31, 117);
+    margin-top:250px;
+    width: 100vw;
+    padding: 20px;
+}
+.para{
+    align-items: center;
+    text-align: center;
+}

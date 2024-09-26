@@ -1,0 +1,289 @@
+
+.fronpic-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    height: auto;
+    border: 1px solid #ddd;
+    box-shadow: 3px 3px 10px black;
+    animation: grow 1.6s ease-in-out infinite;
+    scale: 0.8;
+  }@keyframes grow {
+    0% {
+      transform: scale(1); /* Normal size */
+    }
+    50% {
+      transform: scale(1.05); /* Bigger size */
+    }
+    100% {
+      transform: scale(1); /* Back to normal size */
+    }
+  }
+  .event-desc{
+
+  }
+  .fron-pic {
+    position: relative;
+    max-height: 100%;
+    max-width: 100%;
+    /* background-size: cover;
+    justify-content: center; */
+  }
+  .hero-sec{
+    animation: grow 1.6s ease-in-out infinite;
+  
+  }
+  
+  /* Button Styling */
+  .btn {
+    position: relative;
+    top: 50px;
+    height: 80px;
+    width: 280px;
+    left: 240px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .btn-book {
+    text-align: center;
+    padding-top: 18px;
+    font-size: 30px;
+    margin-left: 80px;
+    width: 70%;
+  }
+  
+  .btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.03);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .herosection-desc {
+    position: relative;
+    margin-top: 30px;
+    top: 80px;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+    animation: glow 1.5s infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+    }
+    to {
+      text-shadow: 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4;
+    }
+  }
+  
+  /* Media Queries for 768px */
+  @media (max-width: 768px) {
+    .hero-sec {
+      height: 200px;
+      width: 550px;
+      margin-top: 50px;
+    }
+    .btn {
+      height: 60px;
+      width: 200px;
+      position: relative;
+      left: 340px;
+    }
+    .event-desc{
+      position: relative;
+      top:100px;
+    }
+    .
+    .btn-box{
+        height: 50px;
+    }
+    .btn-book {
+      font-size: 24px;
+      padding-top: 10px;
+      margin-right: 80px;
+    }
+  
+    .herosection-desc {
+      font-size: 14px;
+      text-align: end;
+      margin-right: 60px;
+      margin-top: -30px;
+    }
+  
+    .fronpic-container {
+      height: 400px;
+    }
+  }
+  
+  /* Media Queries for 475px */
+  @media (max-width: 475px) {
+    .hero-sec {
+      display: block;
+      height: 200px;
+      width: 400px;
+      margin: 20px auto;
+    }
+  
+    .btn {
+      height: 50px;
+      width: 180px;
+      left: 100px;
+    }
+  
+    .btn-book {
+      font-size: 18px;
+    }
+  
+    .herosection-desc {
+      font-size: 12px;
+      text-align: center;
+      margin-right: 0;
+    }
+  
+    .fronpic-container {
+      height: 300px;
+    }
+  }
+  
+  /* Media Queries for 425px */
+   @media (max-width: 425px) {
+    .fronpic-container{
+      display: flex; /* Change to flex for column layout */
+      flex-direction: column; /* Arrange items in a column */
+
+    }
+
+      .hero-sec {
+      display: none;
+      height: 180px;
+      width: 380px;
+      margin: 15px auto;
+    }
+    .event-desc{
+      position: relative;
+      top:100px;
+    }
+
+    .btn {
+      margin:50px;
+      height: 45px;
+      width: 160px;
+      left: 50px;
+    }
+    .btn-box{
+      margin-top: 70px;
+    }
+    .btn-book {
+      font-size: 16px;
+    }
+  
+    .herosection-desc {
+      font-size: 12px;
+      margin: 10px;
+      text-align: center;
+    }
+  
+    .fronpic-container {
+      height: 280px;
+    }
+  }
+  /* Media Queries for 375px */
+@media (max-width: 375px) {
+  .hero-sec {
+        display: flex;
+        flex-direction: column; /* Stack logo and button vertically */
+        align-items: center; /* Center align content */
+        height: auto; /* Allow height to adjust */
+        width: 340px; /* Adjust width for the screen size */
+        margin: 15px auto;
+    }
+
+    .btn-box {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn {
+        height: 42px; /* Slightly bigger than 320px */
+        width: 150px;
+        margin: 15px 0; /* Space around the button */
+        left: 0;
+        top: 0;
+    }
+
+    .btn-book {
+        font-size: 15px; /* Adjust font size */
+    }
+
+    .herosection-desc {
+        font-size: 11px; /* Font slightly larger than 320px */
+        margin-top: -20px; /* Adjust margin for spacing */
+        text-align: center;
+    }
+
+    .fronpic-container {
+        height: auto;
+        display: flex; /* Keep it visible */
+        flex-direction: column; /* Align content in a column */
+        align-items: center;
+        margin-bottom: 10px; /* Add some space at the bottom */
+    }
+}
+
+  /* Media Queries for 320px */
+  @media (max-width: 320px) {
+    .fronpic-container{
+      display: flex; /* Change to flex for column layout */
+      flex-direction: column; /* Arrange items in a column */
+
+    }
+    .hero-sec {
+      align-items: center; /* Center align items */
+      height: auto; /* Allow height to adjust */
+      width: 300px;
+      margin: 10px auto;
+    }
+  
+    .btn-box {
+      margin-top: 20px; /* Adjust margin if needed */
+      display: flex; /* Make sure it uses flex for button alignment */
+      justify-content: center; /* Center align buttons */
+    }
+  
+    .btn {
+      height: 40px;
+      width: 140px;
+      left: 0; /* Remove left positioning */
+      top: 0; /* Remove top positioning */
+      margin: 5px; /* Add some margin around buttons */
+    }
+  
+    .btn-book {
+      font-size: 14px;
+    }
+    .hero-sec{
+        height: 100px;
+    }
+    .herosection-desc {
+      font-size: 10px;
+      margin-top: -40px; /* Adjust margin for spacing */
+      text-align: center;
+    }
+  
+    .fronpic-container {
+      height: auto; /* Allow height to adjust */
+      display: flex; /* Keep it visible and use flexbox */
+      flex-direction: column; /* Arrange inner elements in a column */
+      align-items: center;
+    }
+  }
+  
