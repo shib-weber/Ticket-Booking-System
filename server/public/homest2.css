@@ -2,12 +2,53 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: rgba(0, 0, 0, 0.87);
     overflow-y: auto;
 }
+.content {
+    position: relative;
+    z-index: -1; /* Ensure content is above the comet */
+}
 
-h1, h2 {
-    color: #333;
+.comet {
+    position: absolute;
+    top: -50px; /* Start above the viewport */
+    width: 600px;
+    height: 30px;
+    background: linear-gradient(to right, rgb(0, 255, 42), rgb(0, 238, 255));
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    animation: fall 6s linear forwards;
+    z-index: -10000;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(calc(550vh + 50px)); /* Move out of the viewport */
+    }
+}
+.tiled-background {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); /* Create responsive tiles */
+    grid-gap: 5px; /* Gap between tiles */
+    height: 530vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100; /* Place below the content */
+}
+
+.tile {
+    background-color: rgba(8, 8, 8, 0.884); /* Light tiles with transparency */
+    border: 1px solid rgba(15, 12, 12, 0.849); /* Optional border for tiles */
+    box-shadow: inset 0 0 10px rgba(2, 36, 51, 0.637); /* Glowing effect */
+}
+
+h1, h2, h3 {
+    color: white;
 }
 
 h1 {
@@ -15,8 +56,8 @@ h1 {
     text-align: center;
     padding: 20px;
     margin: 0;
-    background-color: #007bff;
-    color: white;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
     font-size: 28px;
     text-align: center;
 }
@@ -41,9 +82,9 @@ h1 {
 
 .register {
     padding: 20px;
-    background-color: white;
+    background-color: black;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(11, 236, 41, 0.699);
     margin: 20px auto;
     width: 90%;
     max-width: 1200px;
@@ -122,13 +163,7 @@ button:hover {
         max-width: 100%;
     }
 }
-.booking{
-    height: 150px;
-    left: 50%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+
 .generate{
     padding: 2% 10%;
     height: auto;
@@ -245,7 +280,8 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #007bff;
+    background-color: #000000c9;
+    box-shadow: 0 4px 8px rgba(11, 236, 41, 0.699);
     padding: 20px;
     position: relative;
 }
@@ -262,11 +298,13 @@ img{
 
 /* Search Bar Input */
 #searchi {
+    background-color: black;
+    color: #06f81b;
     width: 100%;
     max-width: 400px; /* Max width for responsive design */
     padding: 12px 20px;
     font-size: 16px;
-    border: 2px solid #ccc;
+    border: 2px solid #06f81b;
     border-radius: 30px;
     outline: none;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -274,22 +312,22 @@ img{
 
 /* Hover and Focus Effects */
 #searchi:focus {
-    border-color: #2c2380; /* Green border on focus */
-    box-shadow: 0 0 10px rgba(76, 144, 175, 0.4); /* Green shadow */
+    border-color: #00d8f5; /* Green border on focus */
+    box-shadow: 0 0 10px rgba(12, 190, 235, 0.884); /* Green shadow */
 }
 
 /* Optional - Placeholder Style */
 #searchi::placeholder {
-    color: #aaa;
+    color: #20ee0d;
     font-style: italic;
 }
 
 /* Search Button */
 #search-btn {
     margin-left: -45px; /* Adjust position next to search bar */
-    background-color: #3767af;
+    background-color: #0df819;
     border: none;
-    color: white;
+    color: rgb(20, 18, 18);
     padding: 12px;
     font-size: 16px;
     border-radius: 50%;
@@ -298,7 +336,7 @@ img{
 }
 
 #search-btn:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #1ed4d4; /* Darker green on hover */
 }
 
 /* Responsive for Mobile */
@@ -317,8 +355,8 @@ img{
     }
 }
 .totticket {
-    background: linear-gradient(135deg, purple, violet); /* Gradient background */
-    color: white;
+    background: linear-gradient(135deg, rgb(9, 241, 40), rgb(12, 225, 253)); /* Gradient background */
+    color: black;
     padding: 20px;
     text-align: center;
     border-radius: 15px;
@@ -333,7 +371,8 @@ img{
 }
 
 .totticket h2{
-    color: white;
+    color: black;
+    font-family:'Times New Roman', Times, serif;
 }
 .totticket:hover {
     transform: scale(1.05); /* Scale effect on hover */
@@ -351,8 +390,8 @@ img{
 }
 
 #filterIcon {
-    background-color: #007bff; /* Button background */
-    color: white; /* Text color */
+    background-color: #0cf072; /* Button background */
+    color: rgb(0, 0, 0); /* Text color */
     border: none; /* Remove border */
     border-radius: 4px; /* Rounded corners */
     padding: 0.5rem 1rem; /* Padding */
@@ -361,7 +400,7 @@ img{
 }
 
 #filterIcon:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0dbad1; /* Darker blue on hover */
 }
 
 #dateOptions {
@@ -370,8 +409,8 @@ img{
     position: absolute; /* Position relative to the container */
     top: 100%; /* Below the button */
     left: 0; /* Align with left edge */
-    background-color: white; /* Dropdown background */
-    border: 1px solid #ccc; /* Border */
+    background-color: rgb(3, 3, 3); /* Dropdown background */
+    border: 1px solid #11e00a; /* Border */
     border-radius: 4px; /* Rounded corners */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
     z-index: 1000; /* Ensure it appears above other elements */
@@ -384,7 +423,7 @@ img{
     padding: 0.5rem 1rem; /* Padding */
     border: none; /* Remove border */
     background: transparent; /* Transparent background */
-    color: #007bff; /* Text color */
+    color: #00ff40; /* Text color */
     cursor: pointer; /* Pointer cursor */
     text-align: left; /* Left align text */
     transition: background-color 0.3s; /* Smooth transition */
@@ -392,15 +431,17 @@ img{
 
 .date-option:hover,
 #removeFilter:hover {
-    background-color: #f1f1f1; /* Light gray on hover */
+    background-color: #7de673; 
+    color: black;/* Light gray on hover */
 }
 
 #removeFilter {
-    color: #dc3545; /* Red text for the remove filter option */
+    color: #ff1930; /* Red text for the remove filter option */
 }
 
 #removeFilter:hover {
-    background-color: #f8d7da; /* Light red on hover */
+    background-color: #f37e87; /* Light red on hover */
+    color: black;
 }
 
 .searchnfilter{
@@ -413,10 +454,10 @@ img{
 
 .booking {
     height: 400px;
-    background-color: #f0f4f8; /* Light background for the section */
+    background-color: black; /* Light background for the section */
+    box-shadow: 0 4px 8px rgba(11, 236, 41, 0.699);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
     width: 80%;
     max-width: 600px;
     margin: 20px auto;
@@ -426,7 +467,7 @@ img{
 
 .booking h3 {
     font-size: 24px;
-    color: #333;
+    color: white;
     margin-bottom: 15px;
 }
 
@@ -434,7 +475,7 @@ img{
     padding: 10px;
     width: 60%;
     max-width: 300px;
-    border: 2px solid #ddd;
+    border: 2px solid #10f11b;
     border-radius: 8px;
     font-size: 16px;
     margin-bottom: 10px;
@@ -442,7 +483,7 @@ img{
 }
 
 .booking input[type="number"]:focus {
-    border-color: #6a5fff; /* Highlight on focus */
+    border-color: #0efa35; /* Highlight on focus */
     outline: none;
 }
 
@@ -450,7 +491,7 @@ img{
     padding: 10px;
     width: 60%;
     max-width: 300px;
-    border: 2px solid #ddd;
+    border: 2px solid #1eff16;
     border-radius: 8px;
     font-size: 16px;
     margin-bottom: 10px;
@@ -458,7 +499,7 @@ img{
 }
 
 .booking input[type="text"]:focus {
-    border-color: #6a5fff; /* Highlight on focus */
+    border-color: #04f118; /* Highlight on focus */
     outline: none;
 }
 
@@ -466,7 +507,7 @@ img{
     padding: 2%;
 }
 .booking button {
-    background-color: #bf5fff; /* Button background */
+    background-color: #06f873; /* Button background */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -477,13 +518,13 @@ img{
 }
 
 .booking button:hover {
-    background-color: #c37bfe; /* Change color on hover */
+    background-color: #39e7c2; /* Change color on hover */
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 .booking p {
     font-size: 18px;
-    color: #555;
+    color: white;
     margin-top: 15px;
     font-weight: bold;
 }
@@ -492,10 +533,10 @@ img{
     display: flex;
     flex-direction: column;
     gap: 1%;
-    background-color: #fafafa;
+    background-color: #0e0c0c;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    box-shadow: 0 4px 8px rgba(11, 236, 41, 0.699);/* Soft shadow for depth */
     max-width: 700px;
     margin: 30px auto;
     font-family: 'Arial', sans-serif;
@@ -516,7 +557,7 @@ img{
 
 .generate-input label {
     font-size: 16px;
-    color: #555;
+    color: #20ec5d;
     text-align: left; /* Align labels to the left */
     font-weight: bold;
 }
@@ -524,19 +565,19 @@ img{
 .generate-input input {
     padding: 10px;
     width: 100%;
-    border: 2px solid #ddd;
+    border: 2px solid #4ef71a;
     border-radius: 8px;
     font-size: 16px;
     transition: border 0.3s;
 }
 
 .generate-input input:focus {
-    border-color: #6a5fff; /* Change border color on focus */
+    border-color: #1fec4b; /* Change border color on focus */
     outline: none;
 }
 
 #Generate {
-    background-color: #825fff;
+    background-color: #21fa3e;
     color: white;
     padding: 12px 25px;
     border: none;
@@ -548,7 +589,7 @@ img{
 }
 
 #Generate:hover {
-    background-color: #b87bfe;
+    background-color: #4dfa8f;
     transform: scale(1.05);
 }
 
@@ -600,7 +641,8 @@ img{
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #e3f2fd; 
+    background-color: black; 
+    box-shadow: 0 4px 8px rgba(11, 236, 41, 0.699);
     border-radius: 12px;
     padding: 20px;
     max-width: 400px;
@@ -650,7 +692,7 @@ img{
 
 /* When the checkbox is checked, move the slider */
 input:checked + .slider {
-    background-color: #612db4;
+    background-color: #25fa48;
 }
 
 input:checked + .slider:before {
@@ -658,9 +700,9 @@ input:checked + .slider:before {
 }
 
 .admin-panel {
-    background: white;
+    background: black;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(11, 236, 41, 0.699);
     padding: 20px;
     max-width: 600px;
     margin: auto;
@@ -670,7 +712,7 @@ input:checked + .slider:before {
 
 h3 {
     margin-bottom: 15px;
-    color: #333;
+    color: white;
 }
 
 #uploadForm {
@@ -694,7 +736,7 @@ h3 {
 
 button {
     padding: 10px;
-    background-color: #7428a7;
+    background-color: #20f772;
     color: white;
     border: none;
     border-radius: 4px;
@@ -703,7 +745,7 @@ button {
 }
 
 button:hover {
-    background-color: #232188;
+    background-color: #57f17d;
 }
 
 .image-list {
