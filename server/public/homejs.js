@@ -62,8 +62,8 @@ async function initChart() {
             datasets: [{
                 label: 'Number of Tickets Booked',
                 data: ticketStats.map(stat => stat.count),
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: '#00d8f5',
+                borderColor: 'black',
                 borderWidth: 1,
                 barThickness: 50, 
                 categoryPercentage: 0.9, 
@@ -123,8 +123,8 @@ async function initChart2() {
             datasets: [{
                 label: 'Number of Tickets Booked',
                 data: ticketStats.map(stat => stat.count),
-                backgroundColor: 'rgba(255, 182, 193, 0.2)', 
-                borderColor: 'rgba(255, 105, 180, 1)',
+                backgroundColor: '#00ff2a', 
+                borderColor: 'black',
                 borderWidth: 1,
                 barThickness: 50, 
                 categoryPercentage: 0.8, 

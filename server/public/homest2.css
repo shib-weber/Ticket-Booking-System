@@ -63,7 +63,7 @@ h1 {
 }
 
 #logout {
-    background-color: #f0e0e1;
+    background-color: #00ff2a;
     color: black;
     border: none;
     padding: 10px 15px;
@@ -77,7 +77,7 @@ h1 {
 }
 
 #logout:hover {
-    background-color: #cfc0c0;
+    background-color: #78ec91;
 }
 
 .register {
@@ -214,7 +214,7 @@ img{
 }
 
 .image img {
-    background-color: white;
+    background-color: rgb(6, 248, 46);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -249,12 +249,12 @@ img{
     margin-left: 50px;
     background: none;
     border: none;
-    color: white;
+    color: rgb(6, 253, 39);
     cursor: pointer;
 }
 
 .side-panel h2 {
-    color: white;
+    color: rgb(15, 248, 7);
     margin-left: 20px;
 }
 
@@ -268,13 +268,14 @@ img{
 }
 
 .side-panel ul li a {
-    color: white;
+    color: rgb(9, 248, 41);
     text-decoration: none;
     display: block;
 }
 
 .side-panel ul li a:hover {
-    background-color: #575757;
+    background-color: #8ff0a4;
+    color: black;
 }
 .header {
     display: flex;

@@ -52,13 +52,14 @@ body {
 }
 
 #animation-container {
-    top: 5rem;
+    top: 2rem;
     overflow: hidden;
     position: relative;
     right: 0;
     background-color: black;
-    width: 500px;
-    height: 550px;
+    background-image: url('/tecc.jpg');
+    width: 600px;
+    height: 330px;
     background-size: contain;
 }
 
