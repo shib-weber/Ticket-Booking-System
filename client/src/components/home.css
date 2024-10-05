@@ -1,4 +1,17 @@
-
+.body {
+  font-family: 'Arial', sans-serif;
+  background-color: rgba(0, 0, 0, 0.87);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  height: 100vh;
+}
+p{
+  color: white;
+}
 .fronpic-container {
     position: relative;
     top: 0;
@@ -19,9 +32,6 @@
     100% {
       transform: scale(1); /* Back to normal size */
     }
-  }
-  .event-desc{
-
   }
   .fron-pic {
     position: relative;
@@ -71,16 +81,16 @@
     color: black;
     text-align: center;
     font-family: 'Arial', sans-serif;
-    text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+    text-shadow: 0 0 10px #41ff12, 0 0 20px #94ff69, 0 0 30px #6eff69;
     animation: glow 1.5s infinite alternate;
   }
   
   @keyframes glow {
     from {
-      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+      text-shadow: 0 0 10px #adff69, 0 0 20px #69ff71, 0 0 30px #82ff69;
     }
     to {
-      text-shadow: 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4;
+      text-shadow: 0 0 20px #69ff96, 0 0 30px #76ff69, 0 0 40px #76ff69;
     }
   }
   
@@ -101,7 +111,7 @@
       position: relative;
       top:100px;
     }
-    .
+    
     .btn-box{
         height: 50px;
     }
@@ -286,4 +296,45 @@
       align-items: center;
     }
   }
-  
+
+  .content {
+    position: relative;
+    z-index: -1; /* Ensure content is above the comet */
+}
+
+.comet {
+    position: absolute;
+    top: -50px; /* Start above the viewport */
+    width: 600px;
+    height: 30px;
+    background: linear-gradient(to right, rgb(0, 255, 42), rgb(0, 238, 255));
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    animation: fall 10s linear forwards;
+    z-index: -1000;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(calc(550vh + 50px)); /* Move out of the viewport */
+    }
+}
+.tiled-background {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); /* Create responsive tiles */
+    grid-gap: 5px; /* Gap between tiles */
+    height: 530vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100; /* Place below the content */
+}
+
+.tile {
+    background-color: rgba(0, 0, 0, 0.849); /* Light tiles with transparency */
+    border: 1px solid rgba(15, 12, 12, 0.507); /* Optional border for tiles */
+    box-shadow: inset 0 0 10px rgba(2, 36, 51, 0.637); /* Glowing effect */
+}
