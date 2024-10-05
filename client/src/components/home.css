@@ -42,6 +42,10 @@
     justify-content: center; */
   }
   .hero-sec{
+    margin-top: 2rem;
+    margin-left: 2rem;
+    padding: 0 0 25px 0;
+    max-width: 80%;
     animation: grow 1.6s ease-in-out infinite;
   
   }

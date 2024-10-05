@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Home1 from "../assests/dandiyalogo.png";
+import Home1 from "../assests/ticsys.webp";
 import "./home.css";
 import Navbar from "./navbar.jsx";
 import Foot from "./footer.jsx";
-import Home3 from "../assests/fronpic.jpg";
+import Home3 from "../assests/webtech1.jpg";
 import Crousel from "./slider.js";
 
 export default function Home() {

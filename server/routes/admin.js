@@ -71,7 +71,7 @@ function validateEmailDomain(email) {
     });
 }
 
-router.get('/signup',TokenVerify, (req, res) => {
+router.get('/signup', (req, res) => {
     return res.render('signup');
 });
 
