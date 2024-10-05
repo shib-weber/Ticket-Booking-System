@@ -57,7 +57,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="herosection-desc mt-4 text-sm sm:text-md md:text-lg text-white">
-            <p>Taaza Dandiya 2024 – Celebrate 15 Years of Dance, Music, & Fun | Navratri 2024</p>
+            <p id="para">Taaza Dandiya 2024 – Celebrate 15 Years of Dance, Music, & Fun | Navratri 2024</p>
           </div>
         </div>
       </div>

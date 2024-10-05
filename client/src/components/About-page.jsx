@@ -1,8 +1,37 @@
-import React from 'react';
+import {useEffect} from 'react';
 import './about.css';
 
 const Aboutpage = () => {
+    useEffect(() => {
+        function createComet() {
+           const comet = document.createElement('div');
+           comet.className = 'comet';
+           comet.style.left = Math.random() * window.innerWidth + 'px';
+           document.body.appendChild(comet);
+           comet.addEventListener('animationend', () => comet.remove());
+        }
+    
+        const interval = setInterval(createComet, 1500);
+    
+        function createTiles() {
+           const background = document.querySelector('.tiled-background');
+           const numberOfTiles = Math.ceil((window.innerWidth / 24) * (window.innerHeight / 25)) + 4;
+           for (let i = 0; i < numberOfTiles; i++) {
+              const tile = document.createElement('div');
+              tile.className = 'tile';
+              background.appendChild(tile);
+           }
+        }
+    
+        createTiles();
+    
+        // Cleanup the interval on component unmount
+        return () => clearInterval(interval);
+     }, []);
     return (
+        <>
+            <div className="content"></div>
+            <div className="tiled-background"></div>
         <div className="container">
             <header>
                 <h1>Join Eastern India’s BIGGEST Dandiya Event!</h1>
@@ -41,6 +70,7 @@ const Aboutpage = () => {
                 </a>
             </section>
         </div>
+        </>
     );
 };
 
