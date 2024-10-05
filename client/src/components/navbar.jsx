@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import LogoImg from  "../assests/logo.png";
+import LogoImg from  "../assests/webtech.png";
 import "./navbar.css"
 
 export default function Navbar(){
     return(
-        <nav className="p-3 px-10 border flex items-center justify-between bg-pink-600 shadow-md shadow-pink-800">
+        <nav className="p-3 px-10 border flex items-center justify-between bg-green-500 shadow-md shadow-green-300">
             <Logo />
             <div className="inter flex items-center list-none gap-6 nav-items">
                 <li><a href={"#"} className="text-xl text-white">Home</a> </li>

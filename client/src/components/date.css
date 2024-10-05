@@ -8,6 +8,9 @@ body {
     overflow: hidden;
     align-items: center;
 }
+p{
+    color: black;
+}
 .date-selection {
     display: flex;
     gap: 10px;
@@ -16,7 +19,7 @@ body {
 }
 
 .date-box {
-    background-color: #f00040;
+    background-color: #27a723;
     border: 2px solid #ddd;
     border-radius: 10px;
     padding: 10px;
@@ -46,9 +49,9 @@ body {
 
 .date-box:hover {
     background-color: #f0f0f0;
-    border-color: #c72020;
+    border-color: #15a81d;
     font-weight: 600;
-    color:rgb(242, 9, 48);
+    color:rgb(9, 242, 67);
 }
 
 .button-container {

@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Home1 from "../assests/dandiyalogo.png";
 import "./home.css";
-import Navbar from "./navbar.js";
-import Foot from "./footer.js";
+import Navbar from "./navbar.jsx";
+import Foot from "./footer.jsx";
 import Home3 from "../assests/fronpic.jpg";
 import Crousel from "./slider.js";
 

@@ -31,7 +31,7 @@
 
 .booking-form button{
   font-family: 'Poppins';
-  @apply w-full p-3 text-center bg-pink-700 border-2 border-dashed mt-3 border-blue-500 text-white font-semibold text-lg hover:bg-pink-400;
+  @apply w-full p-3 text-center bg-green-500 border-2 border-dashed mt-3 border-blue-500 text-white font-semibold text-lg hover:bg-green-400;
 }
 .disabled{
   background-color: rgb(171, 171, 171) !important;
